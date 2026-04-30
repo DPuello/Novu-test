@@ -102,7 +102,7 @@
         <mj-column width="33%" padding="0 12px 18px 12px">
           <mj-text align="center" padding="0 0 12px 0">
             <span style="width:64px;height:64px;line-height:64px;text-align:center;border-radius:999px;background:#efefed;display:inline-block;color:#E94560;font-weight:800;font-size:24px;">
-              <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/calendar-svgrepo-com.png" width="30" alt="Calendario" style="display:block;margin:17px auto 0 auto;" />
+              <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/calendar.png" width="30" alt="Calendario" style="display:block;margin:17px auto 0 auto;" />
             </span>
           </mj-text>
           <mj-text css-class="benefit-title" align="center" font-size="22px" line-height="1.1" font-weight="700" padding="0 0 8px 0">Organiza <br>tu día</mj-text>
@@ -112,7 +112,7 @@
         <mj-column width="33.33%" padding="0 12px 18px 12px">
           <mj-text align="center" padding="0 0 12px 0">
             <span style="width:64px;height:64px;line-height:64px;text-align:center;border-radius:999px;background:#efefed;display:inline-block;color:#E94560;font-weight:800;font-size:24px;">
-              <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/target-svgrepo-com.png" width="30" alt="Objetivos" style="display:block;margin:17px auto 0 auto;" />
+              <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/target.png" width="30" alt="Objetivos" style="display:block;margin:17px auto 0 auto;" />
             </span>
           </mj-text>
           <mj-text css-class="benefit-title" align="center" font-size="22px" line-height="1.1" font-weight="700" padding="0 0 8px 0">Alcanza tus metas</mj-text>
@@ -122,7 +122,7 @@
         <mj-column width="33.33%" padding="0 12px 0 12px">
           <mj-text align="center" padding="0 0 12px 0">
             <span style="width:64px;height:64px;line-height:64px;text-align:center;border-radius:999px;background:#efefed;display:inline-block;color:#E94560;font-weight:800;font-size:24px;">
-              <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/wallet-svgrepo-com.png" width="30" alt="Finanzas" style="display:block;margin:17px auto 0 auto;" />
+              <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/wallet.png" width="30" alt="Finanzas" style="display:block;margin:17px auto 0 auto;" />
             </span>
           </mj-text>
           <mj-text css-class="benefit-title" align="center" font-size="22px" line-height="1.1" font-weight="700" padding="0 0 8px 0">Controla tus finanzas</mj-text>
@@ -132,7 +132,7 @@
 
       <mj-section padding="0 24px 24px 24px">
         <mj-column background-color="#1A1A2E" border-radius="12px" padding="16px">
-          <mj-image src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/rocket-svgrepo-com.png" width="28px" alt="Rocket icon" align="center" padding="0 0 10px 0" />
+          <mj-image src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/rocket.png" width="28px" alt="Rocket icon" align="center" padding="0 0 10px 0" />
           <mj-text align="center" font-size="18px" line-height="1.35" color="#ffffff" padding="0 0 12px 0">
             Miles de personas ya están logrando su mejor versión con Novu.
           </mj-text>
@@ -148,13 +148,13 @@
           <mj-table align="center" cellpadding="0" cellspacing="0" role="presentation" width="190px">
             <tr>
               <td align="center"><a href="https://frontend-portfolio-weld.vercel.app/" target="_blank"><span style="width:30px;height:30px;border-radius:999px;display:inline-block;background:#1A1A2E;color:#1A1A2E;text-align:center;line-height:30px;font-size:11px;font-weight:800;">
-                <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/instagram-svgrepo-com.png" width="19" alt="Instagram" style="display:block;margin:6px auto 0 auto;" />
+                <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/instagram.png" width="19" alt="Instagram" style="display:block;margin:6px auto 0 auto;" />
               </span></a></td>
               <td align="center"><a href="https://frontend-portfolio-weld.vercel.app/" target="_blank"><span style="width:30px;height:30px;border-radius:999px;display:inline-block;background:#1A1A2E;color:#1A1A2E;text-align:center;line-height:30px;font-size:11px;font-weight:800;">
-                <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/linkedin-svgrepo-com.png" width="21" alt="LinkedIn" style="display:block;margin:5px auto 0 auto;" />
+                <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/linkedin.png" width="21" alt="LinkedIn" style="display:block;margin:5px auto 0 auto;" />
               </span></a></td>
               <td align="center"><a href="https://frontend-portfolio-weld.vercel.app/" target="_blank"><span style="width:30px;height:30px;border-radius:999px;display:inline-block;background:#1A1A2E;color:#1A1A2E;text-align:center;line-height:30px;font-size:11px;font-weight:800;">
-                <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/facebook-svgrepo-com.png" width="21" alt="Facebook" style="display:block;margin:5px auto 0 auto;" />
+                <img src="https://raw.githubusercontent.com/DPuello/Novu-test/refs/heads/main/assets/facebook.png" width="21" alt="Facebook" style="display:block;margin:5px auto 0 auto;" />
               </span></a></td>
             </tr>
           </mj-table>
