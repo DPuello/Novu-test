@@ -7,7 +7,7 @@ const emailInput = document.getElementById("test-email");
 const openEmailOnlyButton = document.getElementById("open-email-only");
 const sendEmailTestButton = document.getElementById("send-email-test");
 
-const EMAIL_ROUTE = "/email/index.html";
+const EMAIL_ROUTE = "./email/index.html";
 
 let emailTemplatePromise;
 
