@@ -1,0 +1,176 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="ad.size" content="width=728,height=90" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novu Banner 728x90</title>
+  <style>
+    :root {
+      --primary: #1A1A2E;
+      --accent: #E94560;
+      --bg: #F5F5F0;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      width: 728px;
+      height: 90px;
+      overflow: hidden;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+    }
+
+    .banner {
+      position: relative;
+      width: 728px;
+      height: 90px;
+      overflow: hidden;
+      border: 1px solid rgba(26, 26, 46, 0.16);
+      background: linear-gradient(92deg, #f4f4ef 0%, #f7f7f3 100%);
+      color: var(--primary);
+      user-select: none;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .shape.navy {
+      width: 130px;
+      height: 130px;
+      right: -28px;
+      bottom: -86px;
+      background: radial-gradient(circle at 32% 30%, #28285a 0%, #1A1A2E 66%, #111124 100%);
+    }
+
+    .shape.accent {
+      width: 100px;
+      height: 100px;
+      right: -48px;
+      top: -42px;
+      background: radial-gradient(circle at 30% 30%, #ff5c72 0%, #E94560 68%, #cb324d 100%);
+      opacity: 0.9;
+    }
+
+    .dot-grid {
+      position: absolute;
+      right: 110px;
+      top: 18px;
+      width: 34px;
+      height: 34px;
+      background-image: radial-gradient(circle, rgba(26, 26, 46, 0.88) 1.3px, transparent 1.3px);
+      background-size: 8px 8px;
+      opacity: 0.62;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .logo {
+      position: absolute;
+      left: 14px;
+      top: 12px;
+      width: 62px;
+      height: auto;
+      z-index: 5;
+    }
+
+    .headline {
+      position: absolute;
+      left: 96px;
+      top: 20px;
+      margin: 0;
+      font-size: 54px;
+      line-height: 0.88;
+      font-weight: 800;
+      letter-spacing: -1px;
+      z-index: 5;
+    }
+
+    .headline .accent { color: var(--accent); }
+
+    .cta {
+      position: absolute;
+      right: 84px;
+      top: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(233, 69, 96, 0.3);
+      z-index: 5;
+      transform-origin: center;
+    }
+
+    .cta span {
+      font-size: 22px;
+      transform: translateY(-1px);
+    }
+
+    .phone-wrap {
+      position: absolute;
+      right: 8px;
+      bottom: -34px;
+      width: 62px;
+      z-index: 4;
+      transform-origin: 40% 86%;
+      pointer-events: none;
+    }
+
+    .phone {
+      width: 100%;
+      display: block;
+      filter: drop-shadow(0 8px 14px rgba(11, 11, 23, 0.28));
+    }
+
+    .ripple {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      left: 0;
+      top: 0;
+      border-radius: 999px;
+      border: 2px solid rgba(233, 69, 96, 0.8);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner" id="banner">
+    <div class="shape navy" id="shapeNavy"></div>
+    <div class="shape accent" id="shapeAccent"></div>
+    <div class="dot-grid" id="dotGrid"></div>
+
+    <img id="logoWrap" class="logo" src="../../assets/logo-250x73.webp" alt="Novu" />
+
+    <h1 class="headline" id="headline">Start <span class="accent">Fresh.</span></h1>
+
+    <button class="cta" id="cta" type="button">Empieza gratis <span>&#8594;</span></button>
+
+    <div class="phone-wrap" id="phoneWrap" aria-hidden="true">
+      <img class="phone" src="../../assets/phone-260x496.webp" alt="" />
+    </div>
+
+    <div class="ripple" id="ripple"></div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

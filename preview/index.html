@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novu - Banner Preview</title>
+  <style>
+    :root {
+      --primary: #1A1A2E;
+      --accent: #E94560;
+      --canvas: #F5F5F0;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--primary);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(233, 69, 96, 0.15), transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(26, 26, 46, 0.12), transparent 35%),
+        var(--canvas);
+      min-height: 100vh;
+      padding: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: -0.8px;
+    }
+
+    p {
+      margin: 10px 0 0;
+      opacity: 0.78;
+    }
+
+    .header {
+      margin-bottom: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 18px;
+    }
+
+    .centered-flex {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(26, 26, 46, 0.12);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 8px 28px rgba(26, 26, 46, 0.08);
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 0 10px;
+      font-size: 14px;
+      font-weight: 700;
+      background: rgba(233, 69, 96, 0.12);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 6px 10px;
+    }
+
+    .frame-wrap {
+      background: #f1f1ec;
+      border-radius: 12px;
+      padding: 12px;
+      overflow: auto;
+      border: 1px dashed rgba(26, 26, 46, 0.16);
+    }
+
+    iframe {
+      display: block;
+      border: 0;
+      background: #fff;
+    }
+
+    .empty {
+      padding: 24px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid rgba(26, 26, 46, 0.12);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Novu Banner Preview</h1>
+    <p>Vista de todos los banners encontrados en la carpeta <code>banners/</code>.</p>
+  </header>
+
+  <main class="centered-flex" id="banner-grid"></main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

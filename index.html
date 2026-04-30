@@ -1,0 +1,250 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novu QA Preview</title>
+  <style>
+    :root {
+      --primary: #1A1A2E;
+      --accent: #E94560;
+      --canvas: #F5F5F0;
+      --card: #ffffff;
+      --line: rgba(26, 26, 46, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--primary);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(233, 69, 96, 0.14), transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(26, 26, 46, 0.1), transparent 34%),
+        var(--canvas);
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .header {
+      margin-bottom: 18px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -0.7px;
+    }
+
+    .header p {
+      margin: 8px 0 0;
+      opacity: 0.78;
+    }
+
+    .section-title {
+      margin: 20px 0 12px;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 8px 26px rgba(26, 26, 46, 0.08);
+      max-width: 100%;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .label {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .meta {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      color: #fff;
+      background: var(--accent);
+      white-space: nowrap;
+    }
+
+    .btn.icon-only {
+      padding: 4px;
+    }
+
+    .btn.secondary {
+      background: #242444;
+    }
+
+    .centered-flex {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .frame-wrap {
+      border-radius: 10px;
+      border: 1px dashed rgba(26, 26, 46, 0.2);
+      background: #efefea;
+      padding: 10px;
+      overflow: auto;
+    }
+
+    .banner-frame {
+      display: block;
+      border: 0;
+      background: #fff;
+    }
+
+    .email-wrap {
+      display: grid;
+      grid-template-columns: minmax(270px, 350px) minmax(340px, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .form-block {
+      background: #f7f7f4;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .field {
+      margin-bottom: 10px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .field input {
+      width: 100%;
+      border: 1px solid rgba(26, 26, 46, 0.2);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 13px;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .hint {
+      margin-top: 8px;
+      font-size: 11px;
+      color: rgba(26, 26, 46, 0.68);
+      line-height: 1.35;
+    }
+
+    .mail-frame-wrap {
+      border: 1px dashed rgba(26, 26, 46, 0.2);
+      border-radius: 10px;
+      background: #efefea;
+      padding: 10px;
+    }
+
+    .mail-frame {
+      width: 100%;
+      height: 1304px;
+      border: 0;
+      background: #fff;
+    }
+
+    .empty {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .email-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @media (max-width: 980px) {
+      .email-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Novu QA Preview</h1>
+    <p>Preview central en raiz para banners y email.</p>
+  </header>
+
+  <h2 class="section-title">Banners</h2>
+  <main class="centered-flex" id="banner-grid"></main>
+
+  <div class="email-header section-title">
+    Email
+    <a id="open-email-only" class="btn secondary icon-only" href="/email/index.html" target="_blank" rel="noreferrer">
+      <svg width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Inter#ffface / External_Link"> <path id="Vector" d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+    </a>
+  </div>
+    <section class="card email-wrap">
+    <aside class="form-block">
+      <div class="field">
+        <label for="test-name">Nombre para prueba</label>
+        <input id="test-name" name="test-name" type="text" placeholder="Tu nombre" value="Juan" />
+      </div>
+      <div class="btn-row">
+        <button id="send-email-test" class="btn" type="button">Copiar HTML para prueba</button>
+      </div>
+      <p class="hint">Este boton copia el HTML compilado con nombre/correo de prueba y rutas absolutas de imagen para pegarlo en tu herramienta de envio.</p>
+    </aside>
+
+    <div class="mail-frame-wrap">
+      <iframe id="email-frame" class="mail-frame" title="Email preview" loading="lazy" src="/email/index.html"></iframe>
+    </div>
+  </section>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

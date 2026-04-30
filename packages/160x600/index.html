@@ -1,0 +1,196 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="ad.size" content="width=160,height=600" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novu Banner 160x600</title>
+  <style>
+    :root {
+      --primary: #1A1A2E;
+      --accent: #E94560;
+      --bg: #F5F5F0;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      width: 160px;
+      height: 600px;
+      overflow: hidden;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+    }
+
+    .banner {
+      position: relative;
+      width: 160px;
+      height: 600px;
+      overflow: hidden;
+      border: 1px solid rgba(26, 26, 46, 0.16);
+      background: radial-gradient(circle at 0% 0%, rgba(233, 69, 96, 0.08) 0%, transparent 44%), var(--bg);
+      color: var(--primary);
+      user-select: none;
+    }
+
+    .shape-navy,
+    .shape-accent {
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .shape-navy {
+      width: 170px;
+      height: 170px;
+      left: -58px;
+      bottom: -40px;
+      background: radial-gradient(circle at 28% 30%, #232354 0%, #1A1A2E 62%, #111124 100%);
+    }
+
+    .shape-accent {
+      width: 122px;
+      height: 122px;
+      right: -68px;
+      top: 248px;
+      background: radial-gradient(circle at 28% 30%, #ff5f75 0%, #E94560 68%, #cb324d 100%);
+      opacity: 0.94;
+    }
+
+    .dot-grid {
+      position: absolute;
+      right: 12px;
+      top: 346px;
+      width: 40px;
+      height: 40px;
+      background-image: radial-gradient(circle, rgba(26, 26, 46, 0.88) 1.4px, transparent 1.4px);
+      background-size: 10px 10px;
+      opacity: 0.58;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .logo {
+      position: absolute;
+      left: 14px;
+      top: 16px;
+      width: 74px;
+      height: auto;
+      z-index: 5;
+    }
+
+    .headline {
+      position: absolute;
+      left: 14px;
+      top: 84px;
+      width: 130px;
+      margin: 0;
+      font-size: 45px;
+      line-height: 0.88;
+      letter-spacing: -1px;
+      font-weight: 800;
+      z-index: 5;
+    }
+
+    .headline .accent { color: var(--accent); display: block; }
+
+    .subhead {
+      position: absolute;
+      left: 16px;
+      top: 183px;
+      width: 124px;
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.22;
+      color: rgba(26, 26, 46, 0.9);
+      z-index: 5;
+      text-align: center;
+    }
+
+    .phone-wrap {
+      position: absolute;
+      left: 18px;
+      top: 268px;
+      width: 128px;
+      z-index: 4;
+      transform-origin: 48% 82%;
+      pointer-events: none;
+    }
+
+    .phone {
+      width: 100%;
+      display: block;
+      filter: drop-shadow(0 12px 20px rgba(10, 10, 20, 0.28));
+    }
+
+    .cta {
+      position: absolute;
+      left: 14px;
+      bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 132px;
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 10px;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1;
+      box-shadow: 0 8px 18px rgba(233, 69, 96, 0.34);
+      z-index: 6;
+      transform-origin: center;
+      white-space: nowrap;
+    }
+
+    .cta span {
+      font-size: 20px;
+      transform: translateY(-1px);
+    }
+
+    .ripple {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      left: 0;
+      top: 0;
+      border-radius: 999px;
+      border: 2px solid rgba(233, 69, 96, 0.8);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9;
+    }
+  </style>
+  <script type="module" crossorigin src="./assets/banner-160x600--nl-2HT5.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/gsap-iOhGLhPo.js">
+</head>
+<body>
+  <div class="banner" id="banner">
+    <div class="shape-navy" id="shapeNavy"></div>
+    <div class="shape-accent" id="shapeAccent"></div>
+    <div class="dot-grid" id="dotGrid"></div>
+
+    <img id="logoWrap" class="logo" src="./assets/logo-250x73-A4JtUYuH.webp" alt="Novu" />
+
+    <h1 class="headline" id="headline">Start <span class="accent">Fresh.</span></h1>
+
+    <p class="subhead" id="subhead">Tu mejor año comienza hoy.</p>
+
+    <div class="phone-wrap" id="phoneWrap" aria-hidden="true">
+      <img class="phone" src="./assets/phone-260x496-YE0ePZpc.webp" alt="" />
+    </div>
+
+    <button class="cta" id="cta" type="button">Empieza gratis</button>
+
+    <div class="ripple" id="ripple"></div>
+  </div>
+
+</body>
+</html>

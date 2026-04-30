@@ -1,0 +1,107 @@
+﻿import { gsap } from "gsap";
+
+const INTRO_DURATION = 5;
+const LOOP_DURATION = 5;
+const LOOP_REPEATS = 2;
+
+const banner = document.getElementById("banner");
+const cta = document.getElementById("cta");
+const phoneWrap = document.getElementById("phoneWrap");
+const shapeNavy = document.getElementById("shapeNavy");
+const shapeAccent = document.getElementById("shapeAccent");
+const dotGrid = document.getElementById("dotGrid");
+const ripple = document.getElementById("ripple");
+
+window.clickTag = window.clickTag || "https://novuapp.com";
+
+const openClickTag = () => window.open(window.clickTag, "_blank");
+
+const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+intro
+  .from("#logoWrap", { autoAlpha: 0, y: -6, duration: 0.45 })
+  .from("#headline", { autoAlpha: 0, x: -26, duration: 0.55 }, "-=0.2")
+  .from("#phoneWrap", { autoAlpha: 0, x: 18, y: 8, rotate: 8, duration: 0.56, ease: "back.out(1.2)" }, "-=0.24")
+  .from("#cta", { autoAlpha: 0, y: 6, scale: 0.92, duration: 0.46, ease: "back.out(1.6)" }, "-=0.28");
+
+if (intro.duration() < INTRO_DURATION) {
+  intro.to({}, { duration: INTRO_DURATION - intro.duration() });
+}
+
+const loopTweenDuration = LOOP_DURATION / (LOOP_REPEATS + 1);
+const phaseDuration = loopTweenDuration / 2;
+
+const loop = gsap.timeline({ paused: true, repeat: LOOP_REPEATS, yoyo: true, defaults: { ease: "sine.inOut" } });
+
+loop
+  .to(cta, { scale: 1.04, boxShadow: "0 10px 20px rgba(233, 69, 96, 0.4)", duration: phaseDuration }, 0)
+  .to("#cta span", { x: 2, duration: phaseDuration }, 0)
+  .to(phoneWrap, { y: -3, x: -3, rotate: -2.8, duration: phaseDuration }, 0)
+  .to(shapeNavy, { y: -2, x: -2, duration: phaseDuration }, 0)
+  .to(shapeAccent, { y: 2, x: -3, duration: phaseDuration }, 0)
+  .to(dotGrid, { y: -1, opacity: 0.44, duration: phaseDuration }, 0)
+  .to(cta, { scale: 1.055, boxShadow: "0 12px 22px rgba(233, 69, 96, 0.45)", duration: phaseDuration }, phaseDuration)
+  .to("#cta span", { x: 0, duration: phaseDuration }, phaseDuration)
+  .to(phoneWrap, { y: -1, x: -1, rotate: -1.7, duration: phaseDuration }, phaseDuration)
+  .to(shapeNavy, { y: -1, x: 0, duration: phaseDuration }, phaseDuration)
+  .to(shapeAccent, { y: 1, x: -1, duration: phaseDuration }, phaseDuration)
+  .to(dotGrid, { y: 0, opacity: 0.56, duration: phaseDuration }, phaseDuration);
+
+intro.call(() => loop.play(), null, ">");
+
+const rippleAt = (x, y) => {
+  const rect = banner.getBoundingClientRect();
+
+  gsap.set(ripple, {
+    x: x - rect.left - 4,
+    y: y - rect.top - 4,
+    scale: 0.2,
+    opacity: 0.7
+  });
+
+  gsap.to(ripple, {
+    scale: 11,
+    opacity: 0,
+    duration: 0.52,
+    ease: "power2.out"
+  });
+};
+
+cta.addEventListener("mouseenter", () => {
+  gsap.to(cta, { scale: 1.08, duration: 0.2, ease: "power2.out" });
+});
+
+cta.addEventListener("mouseleave", () => {
+  gsap.to(cta, { scale: 1, duration: 0.2, ease: "power2.out" });
+});
+
+banner.addEventListener("pointermove", (event) => {
+  const rect = banner.getBoundingClientRect();
+  const nx = (event.clientX - rect.left) / rect.width - 0.5;
+  const ny = (event.clientY - rect.top) / rect.height - 0.5;
+
+  gsap.to(phoneWrap, {
+    x: nx * 2.4,
+    y: ny * 1.4,
+    rotation: -2.1 + nx * 1.8 + ny * 0.8,
+    duration: 0.5,
+    overwrite: "auto",
+    ease: "power3.out"
+  });
+});
+
+banner.addEventListener("pointerleave", () => {
+  gsap.to(phoneWrap, { x: 0, y: 0, rotation: -2.1, duration: 0.58, ease: "power3.out" });
+});
+
+banner.addEventListener("wheel", (event) => {
+  const up = Math.sign(event.deltaY || 1) < 0;
+  gsap.fromTo(cta, { scale: up ? 1.02 : 0.98 }, { scale: 1.06, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" });
+});
+
+cta.addEventListener("click", () => {
+  const rect = cta.getBoundingClientRect();
+  rippleAt(rect.left + rect.width / 2, rect.top + rect.height / 2);
+  gsap.fromTo(cta, { scale: 0.98 }, { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1, ease: "power2.out" });
+  openClickTag();
+});

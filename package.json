@@ -1,0 +1,25 @@
+{
+  "name": "digital-developer-novu",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:email": "mjml -r email/index.mjml -o email/index.html",
+    "build:watch": "vite build --watch",
+    "preview": "vite preview",
+    "package:banners": "npm run build && node scripts/package-banners.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "mjml": "^5.1.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.10"
+  }
+}
