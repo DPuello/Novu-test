@@ -38,7 +38,7 @@ function getBannerList() {
       const size = parseAdSize(htmlPath);
       return {
         id: entry.name,
-        route: `/banners/${entry.name}/`,
+        route: `./banners/${entry.name}/`,
         width: size.width,
         height: size.height
       };

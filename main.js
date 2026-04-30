@@ -1,5 +1,13 @@
 const bannerGrid = document.getElementById("banner-grid");
-const banners = __BANNER_LIST__;
+const bannersFromBuild = typeof __BANNER_LIST__ !== "undefined" ? __BANNER_LIST__ : null;
+
+const fallbackBanners = [
+  { id: "160x600", route: "./banners/160x600/", width: 160, height: 600 },
+  { id: "300x250", route: "./banners/300x250/", width: 300, height: 250 },
+  { id: "728x90", route: "./banners/728x90/", width: 728, height: 90 }
+];
+
+const banners = Array.isArray(bannersFromBuild) && bannersFromBuild.length ? bannersFromBuild : fallbackBanners;
 
 const emailFrame = document.getElementById("email-frame");
 const nameInput = document.getElementById("test-name");
