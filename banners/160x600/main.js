@@ -1,4 +1,8 @@
-﻿import { gsap } from "gsap";
+﻿const { gsap } = window;
+
+if (!gsap) {
+  throw new Error("GSAP no se cargo. Verifica ../../libraries/gsap.min.js");
+}
 
 const INTRO_DURATION = 5;
 const LOOP_DURATION = 5;
@@ -111,3 +115,5 @@ cta.addEventListener("click", () => {
   gsap.fromTo(cta, { scale: 0.98 }, { scale: 1.08, duration: 0.28, yoyo: true, repeat: 1, ease: "power2.out" });
   openClickTag();
 });
+
+
